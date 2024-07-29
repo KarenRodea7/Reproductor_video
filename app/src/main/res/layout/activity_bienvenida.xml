@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/fondo_pelis"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
@@ -24,7 +24,7 @@
             android:textAlignment="center"
             android:text="Bienvenid@ "
             android:layout_marginBottom="50dp"
-            android:layout_marginTop="110dp"/>
+            android:layout_marginTop="130dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -32,6 +32,7 @@
             android:id="@+id/Registro"
             android:text="Registrarse"
             android:textSize="25dp"/>
+
 
         <Button
             android:layout_width="wrap_content"

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
@@ -19,8 +20,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class Video extends AppCompatActivity {
 
     SharedPreferences preferences;
-    int valor;
+    int valor, x;
     String Video;
+    TextView NF, EF, GF;
 
     Button Me;
 
@@ -30,6 +32,11 @@ public class Video extends AppCompatActivity {
         setContentView(R.layout.activity_video);
 
         Me = findViewById(R.id.Me);
+        NF = findViewById(R.id.NombreF);
+        EF = findViewById(R.id.EdadF);
+        GF = findViewById(R.id.GeneroF);
+
+        leerOpc();
 
         Me.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +76,16 @@ public class Video extends AppCompatActivity {
         media.setAnchorView(view);
         view.requestFocus();
 
+    }
+
+    private void leerOpc() {
+        preferences = getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
+        String nom = preferences.getString("user", "0");
+        NF.setText("Nombre: "+nom);
+        x = preferences.getInt("edad", Integer.parseInt("0"));
+        EF.setText("Edad: "+x);
+        String g = preferences.getString("gen","-");
+        GF.setText("Género: "+g);
     }
 
     private void leerGa() {

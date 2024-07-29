@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,8 +23,10 @@ public class Menu extends AppCompatActivity {
 
     Button Regreso;
     int a;
+    String nom;
 
     LinearLayout L1, L2;
+    TextView Info;
 
     int x;
 
@@ -42,6 +45,7 @@ public class Menu extends AppCompatActivity {
         T2 = findViewById(R.id.T2);
         L1 = findViewById(R.id.L1);
         L2 = findViewById(R.id.L2);
+        Info = findViewById(R.id.Info);
         Regreso = findViewById(R.id.Regreso);
         leerOpc();
 
@@ -49,7 +53,7 @@ public class Menu extends AppCompatActivity {
         if (x>=12){
             L1.setVisibility(View.VISIBLE);
         }
-        if(x>=18){
+        if(x>18){
             L2.setVisibility(View.VISIBLE);
         }
 
@@ -127,6 +131,8 @@ public class Menu extends AppCompatActivity {
     private void leerOpc() {
         preferences = getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
         x = preferences.getInt("edad", Integer.parseInt("0"));
+        nom = preferences.getString("user", "0");
+        Info.setText(nom+", según tu edad: "+x+", tienes acceso a los siguientes videos");
     }
 
     private void Ga(int a) {
