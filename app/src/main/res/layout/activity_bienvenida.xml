@@ -39,7 +39,6 @@
             android:layout_height="wrap_content"
             android:visibility="invisible"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="400dp"
             android:id="@+id/Menu"
             android:text="Menú"
             android:textSize="25dp"/>

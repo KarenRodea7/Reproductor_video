@@ -94,7 +94,7 @@ public class Bienvenida extends AppCompatActivity {
                 if (User.isEmpty() || Cont.isEmpty() || Edades.isEmpty() || Genero.isEmpty()) {
                     Toast.makeText(Bienvenida.this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(Bienvenida.this, "Registrado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Bienvenida.this, "Registrado. Ahora puedes acceder al Menú", Toast.LENGTH_LONG).show();
                     n = 1;
                     ed = Integer.parseInt(Edades);
                     GUs(User);
